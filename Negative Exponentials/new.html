@@ -10,20 +10,29 @@
 </head>
 <body>
     <div class="title">
-        <h1 class="header">Create A Project</h1>
+        <h1 class="header" id="nameOf">Create A Project</h1>
     </div>
     <div id="origin">
-        <form <!--action="load()"-->
-            <input type="text" id="name" class="newinp" placeholder="name">
-            <input type="text" id="equate" class="newinp" placeholder="equation (a(-b)^x)">
-            <button class="primary" onclick="load()">Submit</button>
-        </form>
+        <!--<form action="load()"-->
+            <input type="text" id="name" class="newinp" placeholder="name" required>
+            <input type="text" id="equateA" class="newinp" placeholder="a in (a(-b)^x)" required>
+            <input type="text" id="equateB" class="newinp" placeholder="b in (a(-b)^x)" required>
+            <input type="text" id="equateH" class="newinp" placeholder="h in (a(-b-h)^x +k)">
+            <input type="text" id="equateK" class="newinp" placeholder="k in (a(-b-h)^x) +k">
+            <button class="primary" type='submit' onclick="load()">Submit</button>
+        <!--</form>-->
     </div>
     <div id="graph">
 
     </div>
     <div id="table">
-        
+        <table id="graphT">
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+            </tr>
+
+        </table>
     </div>
     
 
