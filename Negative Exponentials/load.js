@@ -26,6 +26,11 @@ function load(){
     //change title
     titleProject = document.getElementById('nameOf');
     titleProject.innerHTML = name;
+    //get table
+    function tablePoints(){
+        
+
+    }
 
 
     
