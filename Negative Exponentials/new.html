@@ -10,15 +10,28 @@
 </head>
 <body>
     <div class="title">
-        <h1 class="header" id="nameOf">Create A Project</h1>
+        <h1 class="header">Create A Project</h1>
     </div>
-    <div id="origin">
+    <div id="origin" style="text-align: center;">
         <!--<form action="load()"-->
-            <input type="text" id="name" class="newinp" placeholder="name" required>
+            
+            <h4 id="nameOf">New Projet</h4>
+            <label for="name">Name:</label>
+            <input name="name" type="text" id="name" class="newinp" placeholder="name" required>
+            <br>
+            <label for="equateA">a:</label>
             <input type="text" id="equateA" class="newinp" placeholder="a in (a(-b)^x)" required>
+            <label for="equateA">b:</label>
             <input type="text" id="equateB" class="newinp" placeholder="b in (a(-b)^x)" required>
+            <label for="equateH">h:</label>
             <input type="text" id="equateH" class="newinp" placeholder="h in (a(-b-h)^x +k)">
+            <label for="equateK">k:</label>
             <input type="text" id="equateK" class="newinp" placeholder="k in (a(-b-h)^x) +k">
+            <br>
+            <label for="rangeMin">Minimum Range:</label>
+            <input type="text" id="minRange" class="newinp" placeholder="any real number">
+            <label for="rangeMax">Maximum Range:</label>
+            <input type="text" id="maxRange" class="newinp" placeholder="any real number">
             <button class="primary" type='submit' onclick="load()">Submit</button>
         <!--</form>-->
     </div>
