@@ -6,7 +6,7 @@ function load(){
     var bValue = parseFloat(document.getElementById('equateB').value);
     var hValue = parseFloat(document.getElementById('equateH').value);
     var kValue = parseFloat(document.getElementById('equateK').value);
-    var addBy = parseFloat(document.getElementById('dif').value);
+    var den = parseFloat(document.getElementById('dif').value);
     var rMin = parseFloat(document.getElementById('minRange').value);
     var rMax = parseFloat(document.getElementById('maxRange').value);
     //console debug
@@ -32,23 +32,25 @@ function load(){
     //get points
     //function tablePoints(){
         // set min range as first point
-        var i = rMin;
+        var i = rMin*den;
         var index = i;
+        var max = rMax * den;
         // repaets til index reaches max range
         //plug in step by step and log for debug
-        while (index <= rMax){
-            let pointX = index;
+        while (index <= max){
+            let pointX = index/den;
             console.log('equation: '+aValue.toString()+'(-'+bValue.toString()+')^('+pointX + hValueCons+')'+kValueCons+' Range: ['+rMin+','+rMax+']');
             console.log('xValue:'+pointX);
-            var exponentMkr = index - hValue;
+            var exponentMkr = index - (hValue*den);
             console.log('raisedTo:'+exponentMkr);
-            var power = Math.pow((-1*bValue),exponentMkr)
-            var assembler = aValue*power;
+            var power = (-1*bValue)**exponentMkr;
+            var root = Math.pow(power, 1/den);
+            var assembler = aValue*root;
             console.log('assembleMultiplication:'+assembler);
             var pointY = assembler + kValue;
             console.log('yValue:'+pointY);
             console.log('coordinates:('+pointX+','+pointY+')');
-            index = index + addBy;
+            index = index + 1;
             
             //display
 
