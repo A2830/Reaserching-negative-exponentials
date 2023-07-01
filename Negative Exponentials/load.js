@@ -2,12 +2,13 @@
 function load(){
     // get inputs
     var name = document.getElementById('name').value;
-    var aValue = document.getElementById('equateA').value;
-    var bValue = document.getElementById('equateB').value;
-    var hValue = document.getElementById('equateH').value;
-    var kValue = document.getElementById('equateK').value;
-    var rMin = document.getElementById('minRange').value;
-    var rMax = document.getElementById('maxRange').value;
+    var aValue = parseFloat(document.getElementById('equateA').value);
+    var bValue = parseFloat(document.getElementById('equateB').value);
+    var hValue = parseFloat(document.getElementById('equateH').value);
+    var kValue = parseFloat(document.getElementById('equateK').value);
+    var addBy = parseFloat(document.getElementById('dif').value);
+    var rMin = parseFloat(document.getElementById('minRange').value);
+    var rMax = parseFloat(document.getElementById('maxRange').value);
     //console debug
         //set h and k for console
     if(hValue >= 0){
@@ -29,26 +30,33 @@ function load(){
     titleProject = document.getElementById('nameOf');
     titleProject.innerHTML = name;
     //get points
-    function tablePoints(){
+    //function tablePoints(){
         // set min range as first point
         var i = rMin;
         var index = i;
         // repaets til index reaches max range
         //plug in step by step and log for debug
-        while (index < rMax){
-            var pointX = index;
+        while (index <= rMax){
+            let pointX = index;
+            console.log('equation: '+aValue.toString()+'(-'+bValue.toString()+')^('+pointX + hValueCons+')'+kValueCons+' Range: ['+rMin+','+rMax+']');
             console.log('xValue:'+pointX);
-            var exponentMkr = index + hValue;
+            var exponentMkr = index - hValue;
             console.log('raisedTo:'+exponentMkr);
-            var assembler = a*Math.pow((-1*bValue),exponentMkr);
+            var power = Math.pow((-1*bValue),exponentMkr)
+            var assembler = aValue*power;
             console.log('assembleMultiplication:'+assembler);
             var pointY = assembler + kValue;
+            console.log('yValue:'+pointY);
+            console.log('coordinates:('+pointX+','+pointY+')');
+            index = index + addBy;
+            
             //display
 
             
             
 
-        }
+        //}
+        //tablePoints();
 
     }
 
